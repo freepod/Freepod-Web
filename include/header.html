@@ -1,0 +1,33 @@
+<div id="header">
+	<div id="welcome">[(#ENV{date}|nom_jour)] [(#ENV{date}|affdate)] - Bienvenue sur le portail de la communauté Freepod</div>
+	<div id="menu">
+		<div id="menu2">
+			<ul class="menu">
+				<li id="menu_podcasts"><a href="spip.php?rubrique1" class="jaune">Podcasts</a>
+					<ul class="menu_deroul">
+						<BOUCLE_menu_podcasts(RUBRIQUES){id_parent=1}&{par titre}>
+							<a href="#URL_RUBRIQUE">[(#LOGO_RUBRIQUE_NORMAL|image_reduire{80,80})]</a>
+						</BOUCLE_menu_podcasts>
+					</ul>
+				</li>
+				<li><a href="spip.php?rubrique2">Blog</a></li>
+				<li><a href="#URL_SITE_SPIP/forum">Forum</a></li>
+				<li><a href="/spip.php?page=team">L'équipe</a></li>
+			</ul>
+			<a href="/spip.php?page=howto" class="howto">Comment ça<br/> marche ?</a>
+			<a href="/spip.php?page=agenda" class="agenda"></a>
+			<a href="/live" class="go_live">Live</a>
+		</div>
+	</div>
+	<div id="header_bottom_wide">
+		<div id="header_bottom">
+			<a href="#URL_SITE_SPIP"><img src="#URL_SITE_SPIP/squelettes/img/logo.png" alt="Freepod.net" /></a>
+			<div id="double">
+				<a href="http://nuitsaumax.freepod.net"><img src="/squelettes/img/nuits-freepodnet.png" alt="nuits-freepodnet" width="" height="" /></a>
+			</div>
+		</div>
+	</div>
+	<div id="slogan">
+		<p class="slogan"><span class="slogan_jaune">Libère ton podcast</span> Depuis octobre 2011</p>
+	</div>
+</div>

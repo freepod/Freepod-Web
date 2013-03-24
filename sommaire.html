@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Freepod | Communauté de podcasts</title>
+		<INCLURE{fond=include/head}>
+	</head>
+	<body class="home">
+		[(#INCLURE{fond=include/header})]
+		<div id="container">
+			<div id="main">
+			<h1 class="home">Le réseau Freepod</h1>
+				<!--<a href="/podcasts/freepodcast" class="img_container_une freepodcast"><img src="/squelettes/img/Freepodcast2.png" alt ="Freepodcast" /></a>-->
+				<BOUCLE_podcasts(RUBRIQUES){par date}{inverse}{id_parent=1}>
+					<a href="#URL_RUBRIQUE" class="img_container_une">[(#LOGO_RUBRIQUE_NORMAL|image_reduire{230})]</a>
+				</BOUCLE_podcasts>
+				
+			</div>
+			<div id="secondary">
+				<div class="bloc_secondary">
+					<a href="http://www.twitter.com/freepod" class="sec_social sec_twitter">Twitter</a>
+					<a href="http://www.facebook.com/freepod" class="sec_social sec_facebook">Facebook</a>
+				</div>
+				<div class="bloc_secondary">
+					<h3>Publié récemment</h3>
+					<ul class="pod_recent">
+					<BOUCLE_pod_recents(RUBRIQUES){id_parent=1}{par date}{inverse}{0,7}>
+						<li>
+							<div class="texte_recent">
+								<span class="jaune">#TITRE</span><br>
+						<BOUCLE_pod_recents2(ARTICLES){id_rubrique}{par date}{inverse}{0,1}>
+								<a href="#URL_ARTICLE">[#(#NUMERO_EPISODE) -] #TITRE</a>
+							</div>
+							[<div class="image_recent"><a href="#URL_ARTICLE">(#LOGO_ARTICLE_NORMAL|image_reduire{60}|sinon{#LOGO_RUBRIQUE_NORMAL}|image_reduire{60})</a></div>]
+							<div class="clear"></div></li>
+						</BOUCLE_pod_recents2>
+					</BOUCLE_pod_recents>
+					</ul>
+				</div>
+				<div class="bloc_secondary">
+					<B_blog_recents>
+					<h3>Sur le blog</h3>
+					<ul>
+					<BOUCLE_blog_recents(ARTICLES){id_secteur=2}{par date}{inverse}{0,5}>
+						<li><a href="#URL_ARTICLE">#TITRE</a></li>
+					</BOUCLE_blog_recents>
+					</ul>
+					</B_blog_recents>
+				</div>
+				<B_comms>
+				<div class="bloc_secondary">
+					<h3>Les réactions</h3>
+					<ul>
+					<BOUCLE_comms(FORUMS){tous}{par date}{inverse}{0,6}>
+						<li>
+							<a href="#URL_FORUM" class="jaune">#NOM</a>[ <SPAN class="com_date">le (#DATE|affdate)</SPAN>]
+							<p>[(#TEXTE|couper{130})]</p>
+						</li>
+					</BOUCLE_comms>
+					</ul>
+					</B_comms>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<INCLURE{fond=include/footer}>
+	</body>
+</html>

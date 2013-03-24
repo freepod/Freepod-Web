@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Freepod | Communauté de podcasts</title>
+		<INCLURE{fond=include/head}>
+	</head>
+	<body class="agenda">
+		[(#INCLURE{fond=include/header})]
+		<div id="container">
+			<div id="main">
+			<h1 class="agenda">Agenda</h1>
+			<h2 class="agenda">Les enregistrement en direct de Freepod</h2>
+			<BOUCLE_agenda(BREVES){id_rubrique=1}{par date}{age<=0}>
+				<div class="event">
+					<div class="date">
+						<p class="nom_jour">[(#DATE|nom_jour)]</p>
+						<p class="jour">[(#DATE|jour)]</p>
+						<p class="nom_mois">[(#DATE|nom_mois)]</p>
+						<p class="annee">[(#DATE|annee)]</p>
+					</div>
+					<div class="event_details">
+						<h4><a href="#URL_SITE">#TITRE</a></h4>
+						<div class="event_text">#TEXTE</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</BOUCLE_agenda>
+			<div class="clear"></div>
+			</div>
+		</div>
+		<INCLURE{fond=include/footer}>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<BOUCLE_main(RUBRIQUES){id_rubrique}>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+	<head>
+		<title>#TITRE | Freepod.net</title>
+		<INCLURE{fond=include/head}>
+	</head>
+	<body>
+		[(#INCLURE{fond=include/header})]
+		<div id="container">
+			<div id="main">
+				<BOUCLE_podcasts(RUBRIQUES){par titre}{id_parent}{tous}>
+					<a href="#URL_RUBRIQUE" class="img_container_une">[(#LOGO_RUBRIQUE_NORMAL|image_reduire{250})]</a>
+				</BOUCLE_podcasts>
+			</div>
+		</div>
+		<INCLURE{fond=include/footer}>
+	</body>
+</html>
+</BOUCLE_main>

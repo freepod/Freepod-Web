@@ -1,0 +1,77 @@
+<BOUCLE_main(RUBRIQUES){id_rubrique}>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+	<head>
+		<title>#TITRE | Freepod</title>
+		<INCLURE{fond=include/head}>
+		<script src="/squelettes/js/infobulles.js"></script>
+		<script type="text/javascript">
+		    $(document).ready(function(){
+		      	$("a").wTooltip(); 
+		    });
+		</script>
+	</head>
+	<body>
+		[(#INCLURE{fond=include/header})]
+		<div id="podcast_container">
+			[<div id="podcast_header" style="background: url('/IMG/(#LOGO_RUBRIQUE_SURVOL|fichier)');"></div>]
+			<div id="podcast_options">
+				[<a href="(#SITE_PODCAST)" class="option_button option_web">Site web</a>]
+				[<a href="(#ITUNES)" class="option_button option_itunes">S'abonner sur iTunes</a>]
+				[<a href="(#URL_PODCAST_RSS)" class="option_button option_rss">S'abonner par RSS</a>]
+				[<a href="http://www.twitter.com/(#TWITTER_PODCAST)" class="option_social option_twitter">Twitter</a>]
+				[<a href="(#FACEBOOK_PODCAST)" class="option_social option_facebook">Facebook</a>]
+			</div>
+			<div id="podcast_main">
+				<div id="podcast_content">
+					<B_episodes>
+					#ANCRE_PAGINATION
+					<BOUCLE_episodes(ARTICLES){id_rubrique}{par date}{inverse}{pagination 8}>
+						<div class="episode">
+							<div class="main_episode">
+								[<h1 class="num_episode"><a href="#URL_ARTICLE">#(#NUMERO_EPISODE)</a></h1>]
+								<h2 class="titre_episode"><a href="#URL_ARTICLE" class="jaune">#TITRE</a></h2>
+								<div class="descrip_episode">
+									#TEXTE
+								</div>
+								
+							</div>
+							<div class="secondary_episode">
+								<p class="date">[(#DATE|nom_jour)] <span class="jaune">[(#DATE|jour)] [(#DATE|nom_mois)]</span> [(#DATE|annee)]</p>
+								<ul>
+									<li><a href="#URL_ARTICLE" class="listen">Ecouter</a></li>
+									<BOUCLE_episode(DOCUMENTS){id_article}{extension==mp3|mp4|avi|mpg|ogg|m4a|m4v}><li><a href="#FICHIER" class="dl">Télécharger #EXTENSION</a></li></BOUCLE_episode>
+									<li><BOUCLE_nbcom(FORUMS){id_article}{plat}></BOUCLE_nbcom><a href="#URL_ARTICLE#forum" class="com">[(#TOTAL_BOUCLE) [(#TOTAL_BOUCLE|=={1}|?{commentaire,commentaires})]]</a><//B_nbcom></li>
+								</ul>
+							</div>
+							<div class="clear"></div> 
+						</div>
+					</BOUCLE_episodes>
+					<div class="clear"></div>
+					<div id="pagination">
+						#PAGINATION{page}
+					</div>
+					</B_episodes>
+				</div>
+				<div id="podcast_secondary">
+					<h3 class="secondary">Les animateurs</h3>
+					<p class="animateurs"><BOUCLE_anim(AUTEURS){id_auteur IN (#PODCASTEURS|explode{","})}{par nom}{tous}>
+					<a href="#URL_AUTEUR" class="avatar" title="#NOM">[(#LOGO_AUTEUR|image_reduire{100,0}|image_recadre{100,100}|sinon{"<img src='http://www.freepod.net/squelettes/img/avatar_vide_100.png' />"})]</a></BOUCLE_anim></p>
+					<B_artinvites>
+					<h3 class="secondary">Ils y ont participé</h3>
+					<ul class="invites"><BOUCLE_artinvites(ARTICLES){id_rubrique}{par hasard}>
+					<BOUCLE_invit(AUTEURS){id_article}{!id_auteur IN (#PODCASTEURS|explode{","})}{tous}{doublons}>
+					<li><a href="#URL_AUTEUR" class="avatar_invite" title="#NOM"><span class="avatar">[(#LOGO_AUTEUR|image_reduire{65,0}|image_recadre{65,65}|sinon{"<img src='http://www.freepod.net/squelettes/img/avatar_vide_65.jpg' />"})]</span><span class="invite_nom">#NOM</span></a></li></BOUCLE_invit></BOUCLE_artinvites></ul>
+					</B_artinvites>
+					[<div class="clear"></div>
+					<h3 class="secondary">Licence</h3><br>
+					(#LICENCE)]
+				</div>
+				<div class="clear"></div>
+			</div> 
+		</div>
+		<INCLURE{fond=include/footer}>
+	</body>
+</html>
+</BOUCLE_main>
