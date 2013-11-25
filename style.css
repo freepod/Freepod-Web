@@ -1,0 +1,108 @@
+/*
+Theme Name: Freepod Template
+Theme URI: http://freepod.net
+Author: William AGAY & Freepod team (Design @adhumi 2011)
+Author URI: http://williamagay.com
+Description: This is the template of the Freepod website V2 (second template)
+Version: 2.0
+*/
+
+/* Global */
+
+* {padding: 0px;margin: 0px;}
+body {font-size: 0.9em;font-family: Helvetica, Verdana, Arial, sans-serif;color: #95a1c2;background-color: #162834;background-image: url('images/bg.png');background-position: center top;background-repeat: no-repeat;}
+.center{width: 1200px;margin: auto;}
+a{color: #FFF;text-decoration: none;}
+a:hover{color: #ffba00;transition:color 0.5s ease;}
+a img:hover{opacity: 0.7;transition:opacity 0.3s ease;}
+h1,h2,h3,h4,h5,h6{font-family: 'Changa One';}
+.content{padding: 20px;background: #0e1a22;}
+h1.title{padding-bottom: 20px;font-size: 4em;color: #ffba00;text-transform: uppercase;text-align: center;}
+input{font-size: 1em;padding: 5px;margin-bottom: 10px;margin-top: 10px;}
+input:focus, textarea:focus{outline: none;border: 3px solid #ffba00;}
+textarea{margin-top: 10px;resize:none;padding: 10px;width: 100%;box-sizing: border-box;font-size: 1em;}
+input[type=submit]{border:none;margin-top: 10px;padding-top: 10px;background: #ffba00;font-size: 1.5em;font-family: 'Aldrich', Arial;}
+input[type=submit]:focus{border: none;}
+input[type=submit]:hover{color: #fff;cursor: pointer;}
+
+/* Share plugin */
+.ssba{margin-top: 30px;}
+
+/* nav Menu */
+nav.navbar{width: 100%;height: 45px;background: #294961;}
+nav.navbar ul{list-style-type: none;padding-top: 12px;margin-left: 20px;}
+nav.navbar ul li{font-family: Aldrich, Arial;display: inline;padding-right: 30px;font-size: 1.8em;text-transform: uppercase;}
+
+/* Logo container */
+div.logo-container{background: #0e1a22;height: 200px;}
+.logo{margin-left: 20px;margin-top: 10px;margin-bottom: 10px;float: left;width: 670px;}
+.twitter, .facebook{height: 50px;float: right;margin-right: 10px;margin-top: 10px;}
+h2.slogan{float: right;color: #ffba00;font-size: 3em;text-transform: uppercase;margin-right: 20px;margin-top: 85px;}
+
+/* Podcast list */
+.podcast{background: #FFF;margin-left:25px;margin-bottom: 25px;padding: 10px;border-radius: 5px;float: left;width: 230px;height: 230px;}
+.podcast:hover{background: #ffba00;}
+
+/* Sidebar */
+.sidebar h3{padding-top: 10px;color: #ffba00;text-transform: uppercase;font-size: 1.6em;font-family: Aldrich, Arial;}
+.sidebar hr{border-color: #0e1a22;}
+
+.sidebar .lastpost{margin: 15px 0px;width: 100%;float: left;}
+.sidebar .lastpost .title{color: #ffba00;font-family: Helvetica, Verdana, Arial;font-size: 1.2em;}
+.sidebar .lastpost h5{margin-top: 5px;font-family: Helvetica, Verdana, Arial;color: #fff;}
+.sidebar .thumb{margin-right: 10px;float:left;width: 60px;background: #FFF;border-radius: 3px;padding: 3px;}
+
+/* Footer */
+footer{width: 100%;margin-top: 50px;background: #0e1a22;height: 90px;}
+footer .footer-left{padding-top: 14px;float: left;}
+footer .footer-right{float: right;padding-top: 25px;}
+footer .footer-right a{font-size: 1.8em;font-family: Aldrich, Arial;}
+
+/* Article */
+article.content{margin-bottom: 30px;}
+article h1 a{text-transform: uppercase;color: #ffba00;}
+article h1{font-size: 3em; text-transform: uppercase;color: #ffba00;}
+.banniere{margin-top: -62px;}
+
+.dl{width: 100%;font-size: 1.3em;padding-top: 10px;cursor:pointer;font-family: 'Aldrich', Arial;padding-bottom: 5px;background: #ffba00;border:none;}
+.dl:hover{color: #fff;transition:color 0.3s ease;}
+
+/* Single */
+.meta{font-size: 1.2em;margin-bottom: 20px;font-family: 'Aldrich', Arial;}
+
+/* Comments */
+.comments-container{border-top: 3px solid #fff;}
+.comments-container h3{font-size: 1.2em;margin-top: 30px;margin-bottom: 20px;font-family: 'Aldrich', Arial;}
+.comments-container input{font-size: 1em;padding: 5px;margin-bottom: 10px;}
+.comments-container input:focus, .comments-container textarea:focus{outline: none;border: 3px solid #ffba00;}
+.comments-container textarea{resize:none;padding: 10px;width: 100%;box-sizing: border-box;font-size: 1em;}
+.comments-container #submit{border:none;margin-top: 10px;padding-top: 10px;background: #ffba00;font-size: 1.5em;font-family: 'Aldrich', Arial;}
+.comments-container #submit:focus{border: none;}
+.comments-container #submit:hover{color: #fff;cursor: pointer;}
+.comments-container .avatar{float: left;margin-right: 10px;}
+.comments-container .fn, .comments-container .says{font-family: 'Aldrich', Arial;}
+.comments-container .commentmetadata{margin-bottom: 20px;font-size: 0.8em;font-family: 'Aldrich', Arial;}
+.comments-container p{width: 95%;margin-bottom: 20px;}
+.comments-container .reply{margin-bottom: 20px;}
+
+/* Paginate */
+.wp-pagenavi .current{background: #0e1a22;border: none;color: #ffba00;padding: 15px;}
+.wp-pagenavi .page{border: none;color: #FFF;padding: 15px;}
+
+/* Back */
+.back{font-size: 1.5em;margin-bottom: 20px; text-transform: uppercase;font-family: 'Aldrich', Arial;}
+
+/* Font face */
+@font-face {
+  font-family: 'Changa One';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ChangaOne-Regular'), url('http://themes.googleusercontent.com/static/fonts/changaone/v1/QmTOgNNWM9ly3K3B2X29HL3hpw3pgy2gAi-Ip7WPMi0.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Aldrich';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Aldrich'), url('http://themes.googleusercontent.com/static/fonts/aldrich/v1/VWXaIPGrUapL_Y2vGs0lKALUuEpTyoUstqEm5AMlJo4.woff') format('woff');
+}
